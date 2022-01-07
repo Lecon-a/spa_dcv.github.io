@@ -5,67 +5,63 @@ var first_input = document.getElementById("first_input");
 var input_field = document.getElementById("input_field");
 
 var firstNumber, secondNumber;
-var op;
+var aOperator;
 var countOperatoInput = 0;
 
-buttons[19].addEventListener("click", btnZero);
-buttons[16].addEventListener("click", btnOne);
-buttons[17].addEventListener("click", btnTwo);
-buttons[18].addEventListener("click", btnThree);
-buttons[12].addEventListener("click", btnFour);
-buttons[13].addEventListener("click", btnFive);
-buttons[14].addEventListener("click", btnSix);
-buttons[8].addEventListener("click", btnSeven);
-buttons[9].addEventListener("click", btnEight);
-buttons[10].addEventListener("click", btnNine);
 //buttons[20].addEventListener("click", doNotDuplicateDot);
-buttons[15].addEventListener("click", add);
-buttons[11].addEventListener("click", minus);
-buttons[7].addEventListener("click", multiply);
-buttons[5].addEventListener("click", divide);
-// special functions
+const valueButtons = [
+    buttons[8], buttons[9],
+    buttons[10], buttons[12],
+    buttons[13], buttons[14],
+    buttons[16], buttons[17],
+    buttons[18], buttons[19]
+];
+const arithmeticButtons = [
+    buttons[5], buttons[7],
+    buttons[11], buttons[15]
+];
+
+arithmeticButtons.forEach(aButton => {
+    aButton.addEventListener("click", (e) => {
+        operation(aButton.innerHTML);
+        //console.log(aButton.innerHTML);
+    });
+});
+
+valueButtons.forEach(vButton => {
+    vButton.addEventListener("click", (e) => {
+        //console.log(vButton.innerHTML);
+        captureValue(vButton.innerHTML);
+    });
+});
+
+// Solution button
+document.getElementById("equal_to_button").addEventListener("click", solve);
+// special functions 
 buttons[4].addEventListener("click", reset);
 
-function btnZero() {
-    console.log(isZero());
-    input_field.value = isZero() ? 0 : input_field.value += 0;
-}
-
-function btnOne() {
-    console.log(isZero());
-    input_field.value = isZero() ? 1 : input_field.value += 1;
-}
-
-function btnTwo() {
-    input_field.value = isZero() ? 2 : input_field.value += 2;
-}
-
-function btnThree() {
-    input_field.value = isZero() ? 3 : input_field.value += 3;
-}
-
-function btnFour() {
-    input_field.value = isZero() ? 4 : input_field.value += 4;
-}
-
-function btnFive() {
-    input_field.value = isZero() ? 5 : input_field.value += 5;
-}
-
-function btnSix() {
-    input_field.value = isZero() ? 6 : input_field.value += 6;
-}
-
-function btnSeven() {
-    input_field.value = isZero() ? 7 : input_field.value += 7;
-}
-
-function btnEight() {
-    input_field.value = isZero() ? 8 : input_field.value += 8;
-}
-
-function btnNine() {
-    input_field.value = isZero() ? 9 : input_field.value += 9;
+function solve() {
+    if (input_field.value != "") {
+        secondNumber = input_field.value;
+        //alert(`${firstNumber} ${aOperator} ${secondNumber}`)
+        first_input.innerHTML += secondNumber;
+        switch (aOperator) {
+            case "+":
+                input_field.value = firstNumber + secondNumber;
+                break;
+            case "-":
+                input_field.value = firstNumber - secondNumber
+                break;
+            case "*":
+                input_field.value = firstNumber * secondNumber
+                break;
+            case "/":
+                input_field.value = firstNumber / secondNumber
+                break;
+            default:
+                break;
+        }
+    }
 }
 
 function isZero() {
@@ -74,6 +70,10 @@ function isZero() {
     }
     return false;
 }
+
+var captureValue = (value) => {
+    input_field.value = isZero() ? value : input_field.value += value;
+};
 
 // dot button
 function doNotDuplicateDot() {
@@ -86,54 +86,22 @@ function doNotDuplicateDot() {
 }
 
 // Operators buttons functions
-var response;
-function add() {
-    response = oneOperator("+");
-    console.log(`${countOperatoInput} => ${response}`);
-    firstNumber = input_field.value;
-    first_input.innerHTML = firstNumber + " + ";
-    input_field.value = ""
-    op = "+";
-    countOperatoInput = 1;
-}
-
-function minus() {
-    response = oneOperator("-");
-    console.log(`${countOperatoInput} => ${response}`);
-    firstNumber = input_field.value;
-    first_input.innerHTML = firstNumber + " - ";
-    input_field.value = ""
-    op = "-";
-}
-
-function multiply() {
-    response = oneOperator("*");
-    console.log(`${countOperatoInput} => ${response}`);
-    firstNumber = input_field.value;
-    first_input.innerHTML = firstNumber + " * ";
-    input_field.value = ""
-    op = "*";
-}
-
-function divide() {
-    response = oneOperator("/");
-    console.log(`${countOperatoInput} => ${response}`);
-    firstNumber = input_field.value;
-    first_input.innerHTML = firstNumber + " / ";
-    input_field.value = ""
-    op = "/";
-}
+var operation = (op) => {
+    if (input_field.value != 0) {
+        firstNumber = input_field.value;
+        aOperator = op;
+        first_input.innerHTML = `${firstNumber} ${aOperator} `;
+        input_field.value = "";
+    } else if (input_field.value === "") {
+        aOperator = op
+        first_input.innerHTML = `${firstNumber} ${aOperator} `;
+    }
+};
 
 function reset() {
     first_input.innerHTML = "";
     input_field.value = "0";
     firstNumber = 0;
     secondNumber = 0;
-}
-
-function oneOperator(newOp) {
-    if (countOperatoInput == 1) {
-        countOperatoInput = 0;
-        return prompt(`Do you want to replace ${op} to ${newOp}? If 'Yes' click 'Ok' and if 'No' click 'Cancel' button.`);
-    }
+    countOperatoInput = 0;
 }
