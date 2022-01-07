@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/quadratic.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <p class="basic_form">ax^2 + bx + c = 0</p>
+        <div class="inner_container">
+            <div class="row row_variables">
+                <div class="col">
+                    <label for="a" class="v_label">a = </label>
+                    <input type="text" name="a" class="variable" placeholder="a">
+                </div>
+                <div class="col">
+                    <label for="b" class="v_label">b = </label>
+                    <input type="text" name="b" class="variable" placeholder="b">
+                </div>
+                <div class="col">
+                    <label for="c" class="v_label">c = </label>
+                    <input type="text" name="c" class="variable" placeholder="c">
+                </div>
+            </div>
+            <div class="row">
+                <div class="btn" id="clear_button">Clear</div>
+                <div class="btn" id="solve_button">Solve</div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <label class="solutions" id="solutions">x = value_1 and = value_2</label>
+                </div>
+            </div>
+            <p class="solutions_description" id="solutions_description">Solutions nature go here</p>
+        </div>
+    </div>
+
+    <script src="../js/quadratic.js"></script>
+</body>
+
+</html>
