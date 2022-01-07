@@ -1,0 +1,98 @@
+body {
+    margin: 0;
+    background-color: rgba(10, 10, 10, .5);
+    color: rgb(240, 240, 240);
+    font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
+    text-align: center;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 5% 3%;
+}
+
+.inner_container {
+    width: 80%;
+    margin: 5% auto 2%;
+    height: fit-content;
+}
+
+.row {
+    box-sizing: border-box;
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    padding: 5%;
+    margin-bottom: 5px;
+}
+
+.row:last-child {
+    margin-bottom: 0;
+}
+
+.col {
+    box-sizing: border-box;
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+}
+
+.basic_form {
+    padding: 2% 0;
+}
+
+.v_label {
+    margin-right: 4px;
+}
+
+.variable {
+    box-sizing: border-box;
+    width: 50px;
+    text-align: center;
+    padding: 3% 5%;
+    font-size: 14pt;
+}
+
+.btn {
+    box-sizing: border-box;
+    cursor: pointer;
+    background-color: rgba(200, 200, 200, .15);
+    flex: 1;
+    padding: 4%;
+    border-radius: 5px;
+    margin-right: 5px;
+}
+
+.btn:last-child {
+    margin-right: 0;
+}
+
+@media only screen and (max-width: 375px) {
+
+    .inner_container {
+        width: 100%;
+    }
+    .row_variabless {
+        width: 100%;
+        padding: 0;
+        margin-bottom: 5px;
+    }
+
+    .v_label {
+    margin-right: 4px;
+}
+
+.variable {
+    width: 32px;
+    padding: 3% 5%;
+    font-size: 14pt;
+}
+}

@@ -1,0 +1,97 @@
+body {
+    margin: 0;
+    background-color: rgba(122, 85, 85, 0.35);
+    color: rgb(240, 240, 240);
+    font-family: 'Segoe UI', Tahoma, Verdana, sans-serif
+}
+
+h1, h2, h3, h4, h5, h6, a, p {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    margin: 0 auto;
+}
+
+.input_container {
+    display: flex;
+    flex-direction: column;
+    margin: 16px 0 8px;
+}
+
+.first_input {
+    padding: 4px;
+    text-align: left;
+    height: 23px;
+}
+
+.input_field {
+    color:rgb(250, 250, 250);
+    font-size: 14pt;
+    padding: 8px 16px 5px;
+    text-align: right;
+    background-color: transparent;
+    border: none;
+    outline: none;
+}
+
+.btn_row {
+    display: flex;
+    flex-direction: row;
+    border-bottom: 1px solid rgba(145, 144, 144, .5);
+}
+
+.btn_row:last-child {
+    border-bottom: none;
+}
+
+.btn {
+    cursor: pointer;
+    flex: 1;
+    text-align: center;
+    height: 23px;
+    background-color: rgba(122, 85, 85, 0.15);
+    padding: 8px 0 4px;
+}
+
+.btn_row_container {
+    flex:76%;
+    display: flex;
+    flex-direction: column;
+}
+
+.btn_equal_to {
+    box-sizing: border-box;
+    flex: 24%;
+    cursor: pointer;
+    padding: 30px 0 4px;
+    text-align: center;
+    background-color: rgba(122, 85, 85, 0.3);
+    border-left: 1px solid rgba(145, 144, 144, .5);
+}
+
+.br_6 {
+    display: flex;
+    flex-direction: row;
+}
+
+.btn_zero {
+    flex: 67.5%;
+}
+
+.btn_dot {
+    flex: 32.5%;
+}
+
+@media only screen and (max-width: 375px) {
+    .container {
+        width: 100%;
+        margin: 0;
+        padding-bottom: 8px;
+    }
+}
+
