@@ -2,19 +2,36 @@ body {
     font-size: medium;
 }
 
-body, h1, h2, 
-h3, h4, h5, h6, 
-p, ul, li {
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+li {
     margin: 0;
 }
 
-ul, li {
+ul,
+li {
     list-style-type: none;
     padding: 0;
 }
 
 a {
     text-decoration: none;
+    color: rgb(245, 245, 245);
+}
+
+.mt-8 {
+    margin-top: 8px;
+}
+
+span {
+    color: rgba(26, 23, 23);
 }
 
 body {
@@ -24,7 +41,11 @@ body {
     color: rgb(245, 245, 245)
 }
 
-.container, .profile, .main {box-sizing: border-box;}
+.container,
+.profile,
+.main {
+    box-sizing: border-box;
+}
 
 .container {
     padding: 3%;
@@ -32,7 +53,10 @@ body {
     flex-direction: row;
 }
 
-.profile_in, .main {padding: 2%;}
+.profile_in,
+.main {
+    padding: 2%;
+}
 
 .profile {
     flex: 1.5;
@@ -100,7 +124,9 @@ body {
     color: #7cfc00;
 }
 
-.sm_size:last-child {margin-right: 0;}
+.sm_size:last-child {
+    margin-right: 0;
+}
 
 .main {
     box-sizing: border-box;
@@ -146,7 +172,7 @@ body {
     text-align: center;
     padding: 5px 4px 0;
     margin-right: 0;
-    color:rgb(245, 245, 245);
+    color: rgb(245, 245, 245);
 }
 
 .items:hover {
@@ -158,7 +184,7 @@ body {
 }
 
 .project_a:visited {
-    color: red;
+    color: rgba(26, 23, 23, 0.15);
 }
 
 .project_a:hover {
@@ -195,7 +221,7 @@ body {
     padding: 8px 0 8px 16px;
     border-radius: 5px;
     background-color: rgb(245, 245, 245);
-    color:rgb(26, 23, 23)
+    color: rgb(26, 23, 23)
 }
 
 .pci001 {
@@ -206,7 +232,7 @@ body {
 
 .second_level_desc {
     margin: 5px 16px 0 0;
-    padding:5px 0;
+    padding: 5px 0;
     border: none;
     border-top: 1px dotted rgba(128, 128, 128, .5);
 }
@@ -224,6 +250,15 @@ body {
     padding-left: 8px;
 }
 
+.row {
+    display: flex;
+}
+
+.row-experience {
+    margin-right: 8px;
+    padding-right: 8px;
+}
+
 
 /* Responsiveness Rules */
 
@@ -238,10 +273,12 @@ body {
     .profile_in {
         text-align: left;
     }
+
     .p_image {
         width: 6em;
         height: 7em;
     }
+
     .nav {
         right: 26px;
     }
@@ -255,15 +292,18 @@ body {
     .container {
         flex-direction: column;
     }
+
     .profile_in {
         position: relative;
         padding-bottom: 2%;
     }
+
     .status {
         margin: 0 auto 8px;
         contain: content;
         width: fit-content;
     }
+
     .social_media {
         box-sizing: border-box;
         width: fit-content;
@@ -273,15 +313,17 @@ body {
 
     .nav {
         position: relative;
-        right:0;
+        right: 0;
         width: 100%;
         margin: 0 auto;
         display: none;
     }
+
     .write_up {
         padding: 8px 16px;
         margin-top: 12px;
     }
+
     .title {
         width: fit-content;
         text-align: center;
