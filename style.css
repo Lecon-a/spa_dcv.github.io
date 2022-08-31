@@ -23,19 +23,22 @@ li {
 
 a {
     text-decoration: none;
+}
+
+.sm_a {
     color: rgb(245, 245, 245);
+}
+
+.sm_a:hover {
+    color: #7cfc00;
 }
 
 .mt-8 {
     margin-top: 8px;
 }
 
-span {
-    color: rgba(26, 23, 23);
-}
-
 body {
-    font-family: cursive;
+    font-family: Arial;
     font-size: .75em;
     background-color: rgb(0, 0, 0);
     color: rgb(245, 245, 245)
@@ -183,12 +186,13 @@ body {
     background-color: rgba(26, 23, 23, 0.15);
 }
 
-.project_a:visited {
-    color: rgba(26, 23, 23, 0.15);
+.project_a:visited,
+.project_a:link {
+    color: rgba(26, 23, 23);
 }
 
 .project_a:hover {
-    color: #7cfc00;
+    color: #467e0d;
 }
 
 .tabs:hover {
@@ -224,10 +228,26 @@ body {
     color: rgb(26, 23, 23)
 }
 
+.span {
+    position: relative;
+    display: flex;
+    justify-content: start;
+    align-items: baseline;
+    color: rgb(26, 23, 23);
+    padding: 0 16px 0 0;
+}
+
+.span span {
+    position: absolute;
+    top: 3.5px;
+    margin: 0;
+    padding: 0;
+}
+
 .pci001 {
-    width: 45px;
+    width: 18px;
     height: auto;
-    margin-right: .2em;
+    margin-right: .35em;
 }
 
 .second_level_desc {
@@ -259,10 +279,14 @@ body {
     padding-right: 8px;
 }
 
-
 /* Responsiveness Rules */
 
 @media only screen and (max-height: 350px) {
+
+    .row {
+        flex-direction: column;
+    }
+
     .profile {
         flex: 1.75;
         height: fit-content;
