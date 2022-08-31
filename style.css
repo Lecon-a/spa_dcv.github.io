@@ -222,7 +222,7 @@ body {
 }
 
 .description {
-    padding: 8px 0 8px 16px;
+    padding: 8px;
     border-radius: 5px;
     background-color: rgb(245, 245, 245);
     color: rgb(26, 23, 23)
@@ -239,7 +239,8 @@ body {
 
 .span span {
     position: absolute;
-    top: 3.5px;
+    top: 2px;
+    word-wrap: break-word;
     margin: 0;
     padding: 0;
 }
@@ -251,7 +252,7 @@ body {
 }
 
 .second_level_desc {
-    margin: 5px 16px 0 0;
+    margin: 4px 16px 0 0;
     padding: 5px 0;
     border: none;
     border-top: 1px dotted rgba(128, 128, 128, .5);
@@ -286,12 +287,13 @@ body {
     .profile {
         flex: 1.75;
         height: fit-content;
-        margin-left: -16px;
+        margin: 0 auto;
         line-height: 1;
     }
 
     .profile_in {
         text-align: left;
+        margin: 0 auto;
     }
 
     .p_image {
@@ -303,8 +305,10 @@ body {
         right: 26px;
     }
 
-    .phone .status .social_media {
-        margin: 0;
+    .phone,
+    .status,
+    .social_media {
+        margin: 8px 0 8px -8px;
     }
 }
 
@@ -327,7 +331,7 @@ body {
     .social_media {
         box-sizing: border-box;
         width: fit-content;
-        margin: 8px auto;
+        margin: 8px 0 8px -8px;
         padding: 5px 10%;
     }
 
