@@ -229,6 +229,7 @@ body {
 }
 
 .span {
+    position: relative;
     display: flex;
     justify-content: start;
     align-items: baseline;
@@ -237,6 +238,7 @@ body {
 }
 
 .span span {
+    position: absolute;
     top: 3.5px;
     margin: 0;
     padding: 0;
