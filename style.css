@@ -229,7 +229,6 @@ body {
 }
 
 .span {
-    position: relative;
     display: flex;
     justify-content: start;
     align-items: baseline;
@@ -238,13 +237,12 @@ body {
 }
 
 .span span {
-    position: absolute;
     top: 3.5px;
     margin: 0;
     padding: 0;
 }
 
-.pci001 {
+.project_a .pci001 {
     width: 18px;
     height: auto;
     margin-right: .35em;
@@ -282,10 +280,6 @@ body {
 /* Responsiveness Rules */
 
 @media only screen and (max-height: 350px) {
-
-    .row {
-        flex-direction: column;
-    }
 
     .profile {
         flex: 1.75;
