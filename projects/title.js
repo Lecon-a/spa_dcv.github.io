@@ -10,7 +10,7 @@ titles.forEach(title => {
 
 function captureTitle(title) {
     isClickedTitle = title;
-    project_title.innerHTML = title;
+    project_title.innerHTML = "<span class='pointer'>> </span>" + title;
     titles.forEach(title => {
         if (title.text === isClickedTitle) {
             title.style.color = "#7cfc00";

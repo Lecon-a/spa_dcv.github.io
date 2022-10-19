@@ -12,17 +12,17 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 .container {
-    box-sizing: border-box;
     display: flex;
     flex-direction: column;
     width: 100%;
-    padding: 5% 3%;
+    height: fit-content;
+    box-sizing: border-box;
 }
 
 .inner_container {
     width: 80%;
-    margin: 5% auto 2%;
-    height: fit-content;
+    margin: 0 auto;
+    box-sizing: border-box;
 }
 
 .row {
@@ -46,7 +46,7 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 .basic_form {
-    padding: 2% 0;
+    padding: 1% 0;
 }
 
 .v_label {
