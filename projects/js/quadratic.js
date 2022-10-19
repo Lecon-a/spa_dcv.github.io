@@ -14,6 +14,15 @@ buttons.forEach(button => {
     button.onclick = (e) => {     
         // store the current command inside caption variable
         let caption = e.target.dataset.button;
+        
+        inputs.forEach(inp => {
+                    if (inp.value === "") {
+                        alert(`Please, enter a value for '${inp.name}'.`);
+                        isEmpty = true;
+                    }
+                    // alert(`${index} :: ${inp.name} = ${inp.value}`)
+                    parameters[inp.name] = parseInt(inp.value);
+                });
 
         switch (caption) {
             case "reset":
@@ -24,14 +33,6 @@ buttons.forEach(button => {
                 break;
             
             case "solve":
-                inputs.forEach(inp => {
-                    if (inp.value === "") {
-                        alert(`Please, enter a value for '${inp.name}'.`);
-                        isEmpty = true;
-                    }
-                    // alert(`${index} :: ${inp.name} = ${inp.value}`)
-                    parameters[inp.name] = parseInt(inp.value);
-                });
                 // Check for emptiness
                 if (isEmpty) {
                     return;
