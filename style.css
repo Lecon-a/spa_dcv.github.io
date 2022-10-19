@@ -70,6 +70,7 @@ body {
     height: auto;
     display: flex;
     position: relative;
+    text-align: center;
 }
 
 .profile_in {
@@ -112,7 +113,7 @@ body {
     display: flex;
     flex-direction: row;
     text-align: center;
-    margin-top: 16px;
+    margin: 16px auto;
     padding: 5px 10%;
     background-color: rgba(128, 128, 128, .05);
 }
@@ -229,7 +230,8 @@ body {
     padding: 8px;
     border-radius: 5px;
     background-color: rgb(245, 245, 245);
-    color: rgb(26, 23, 23)
+    color: rgb(26, 23, 23);
+    
 }
 
 .span {
@@ -256,6 +258,7 @@ body {
 }
 
 .second_level_desc {
+    width: 100%;
     margin: 4px 16px 0 0;
     padding: 5px 0;
     border: none;
@@ -263,12 +266,24 @@ body {
 }
 
 .project_container {
-    box-sizing: border-box;
+    width: 100%;
     margin-right: 8px;
     margin-bottom: 5px;
     border-radius: 5px;
     background-color: rgba(235, 228, 228, 0.45);
-    padding: 5px 0 5px 8px;
+    box-shadow: 1px 1px 1px rgba(100, 100, 100, .25);
+    box-sizing: border-box;
+}
+
+.project_container .first_level_desc, .project_container .second_level_desc {
+    padding: 4px 4px 4px 8px;
+}
+
+.project_container .second_level_desc {
+    padding-left: 4px;
+    word-wrap: break-word;
+    text-align: justify;
+    box-sizing: border-box;
 }
 
 .pcp8 {
@@ -277,11 +292,20 @@ body {
 
 .row {
     display: flex;
+    flex-direction: row;
 }
 
-.row-experience {
-    margin-right: 8px;
-    padding-right: 8px;
+.col {
+    flex: 4;
+}
+
+.addr {
+    flex: 1;
+    padding: 32px 4px;
+}
+
+.justify {
+    text-align: justify;
 }
 
 /* Responsiveness Rules */
@@ -293,11 +317,6 @@ body {
         height: fit-content;
         margin: 0 auto;
         line-height: 1;
-    }
-
-    .profile_in {
-        text-align: left;
-        margin: 0 auto;
     }
 
     .p_image {
@@ -312,17 +331,67 @@ body {
     .phone,
     .status,
     .social_media {
-        margin: 8px 0 8px -8px;
+        margin: 8px auto;
     }
+
+    .row {
+        flex-direction: column;
+    }
+
+    .addr {
+        padding: 4px;
+    }
+
+    .row-experience .col {
+        width: 100%;  
+        margin: 0;
+    }
+
+    .skill-row {
+        display: flex;
+        flex-direction: row;
+        overflow-y: scroll;
+        margin: 0;
+        padding: 0;
+    }
+
+    .skill-row .second_level_desc {
+        border-top: none;
+    }
+
+    .row-experience-p {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+        margin-right: 5px;
+        padding: 6px;
+        border-radius: 3px;
+        background-color: #fff;
+        box-shadow: 1px 2px 2px #eee;
+    }
+
+    .row-experience-p ul {
+        flex: 4;
+    }
+
+    .row-experience-p:last-child {
+        margin-right: 0;
+    }
+    
 }
 
 @media only screen and (max-width: 412px) {
+
     .container {
         flex-direction: column;
     }
 
     .profile_in {
         position: relative;
+        width: fit-content;
         padding-bottom: 2%;
     }
 
@@ -333,10 +402,9 @@ body {
     }
 
     .social_media {
-        box-sizing: border-box;
         width: fit-content;
-        margin: 8px 0 8px -8px;
-        padding: 5px 10%;
+        margin: 8px auto 8px -18px;
+        box-sizing: border-box;
     }
 
     .nav {
@@ -360,4 +428,47 @@ body {
         margin-right: auto;
         border-bottom: 2px solid rgb(245, 245, 245);
     }
+
+    .row {
+        flex-direction: column;
+    }
+
+    .addr {
+        padding: 4px;
+    }
+    
+    .skill-row {
+        display: flex;
+        flex-direction: row;
+        overflow-y: scroll;
+        margin: 0;
+        padding: 0;
+    }
+    
+    .skill-row .second_level_desc {
+        border-top: none;
+    }
+    
+    .row-experience-p {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+        margin-right: 5px;
+        padding: 6px;
+        border-radius: 3px;
+        background-color: #fff;
+        box-shadow: 1px 2px 2px #eee;
+    }
+    
+    .row-experience-p ul {
+        flex: 4;
+    }
+    
+    .row-experience-p:last-child {
+        margin-right: 0;
+    }
+
 }
