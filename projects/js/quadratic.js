@@ -1,17 +1,17 @@
 "use strict";
 
 // alert("quadratic equation!");
-// Get all the input elements
-const inputs = document.querySelectorAll(".variable");
 // Get all the commands i.e the buttons
 const buttons = document.querySelectorAll(".btn");
+// Get all the input elements
+const inputs = document.querySelectorAll(".variable");
 // JSON
 let parameters = {};
 let isEmpty = false;
 
 // Iterate through the retrieved commands
 buttons.forEach(button => {
-    button.onclick = (e) => {
+    button.onclick = (e) => {     
         // store the current command inside caption variable
         let caption = e.target.dataset.button;
 
